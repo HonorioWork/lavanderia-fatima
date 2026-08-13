@@ -1,31 +1,50 @@
-# Site Juda Eletric Motors
+# Lavanderia Fátima
 
-Site estático criado do zero para a Juda Eletric Motors.
+Site estático criado para a Lavanderia Fátima, no Centro do Rio de Janeiro.
 
 ## Como abrir
 
-Abra o arquivo `index.html` no navegador.
+Abra o arquivo `index.html` em um navegador.
+
+Site publicado:
+
+`https://honoriowork.github.io/lavanderia-fatima/`
 
 ## Estrutura
 
-- `index.html`: conteúdo da página
-- `styles.css`: visual e responsividade
-- `script.js`: menu mobile, animações e galeria ampliada
-- `assets/images`: artes e fotos dos modelos
-- `assets/logo-juda.svg`: logo usado no cabeçalho com o texto “ELETRIC MOTORS”
+- `index.html`: conteúdo principal da página
+- `style.css`: visual e responsividade
+- `script.js`: menu, animações, tradução e links de WhatsApp
+- `assets/images`: imagens e logo da lavanderia
+- `assets/icons`: ícones usados no site
+- `robots.txt`: orientação para mecanismos de busca
+- `sitemap.xml`: mapa do site
 
-## Canais usados no site
+## Informações principais
 
-- WhatsApp: (21) 96996-7359
-- Instagram: https://www.instagram.com/juda_motors_eletric/
-- Facebook: https://www.facebook.com/profile.php?id=61589587040037
-- Google: https://share.google/eT10Ooegbg1o0EyaV
+- Nome: Lavanderia Fátima
+- Endereço: Av. Nossa Senhora de Fátima, 50 - Loja C, Centro, Rio de Janeiro - RJ
+- WhatsApp: (21) 2232-6565
+- E-mail: lavanderiafatimaltda@gmail.com
+- Instagram: `@lavanderia_fatima_rj`
 
-## Informações capturadas do Instagram
+## Horário de funcionamento
 
-- Categoria: Compras e varejo
-- Bio: motos elétricas com condições facilitadas
-- Condições destacadas: até 24x, sem IPVA e sem CNH, sujeito a confirmação com a loja
-- Entrega: todo RJ
-- Localização/base: Duque de Caxias - RJ
-- Destaques citados: Clientes, Localização, X13, S8, ZS800, Apollo, Trixx Raptor, Floxy, IM10, Zetto, Faísquinha, Triciclo e Haven
+- Segunda a sexta: 8h às 17:30h
+- Sábado: 8h às 14:30h
+- Domingo: fechado
+
+## Serviços destacados
+
+- Roupas do dia a dia
+- Roupas sociais
+- Edredons e cobertores
+- Cama, mesa e banho
+- Peças delicadas
+- Passadoria
+- Lavagem especializada
+- Tingimento mediante avaliação
+
+## Observação sobre tingimento
+
+O serviço de tingimento é terceirizado, feito mediante avaliação da peça e possui prazo de entrega de 15 a 20 dias.
