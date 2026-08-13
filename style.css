@@ -731,7 +731,7 @@ section[id] { scroll-margin-top: 84px; }
 .hero-info-strip a {
     display: grid;
     gap: 3px;
-    min-height: 76px;
+    min-height: 92px;
     padding: 14px 16px;
     border-radius: var(--radius-md);
     background: rgba(12,28,38,0.56);
@@ -3043,9 +3043,9 @@ section[id] { scroll-margin-top: 84px; }
 
 .pricing-panel {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
-    max-width: 1160px;
+    max-width: 940px;
     margin: 0 auto;
     align-items: stretch;
 }
@@ -3136,6 +3136,7 @@ section[id] { scroll-margin-top: 84px; }
     letter-spacing: .02em;
 }
 
+.pricing-line--assessment::after,
 .pricing-line:nth-child(5)::after {
     content: 'Avaliação individual';
     background: rgba(234,171,56,.14);
@@ -3146,6 +3147,7 @@ html[lang="en"] .pricing-line::after {
     content: 'WhatsApp';
 }
 
+html[lang="en"] .pricing-line--assessment::after,
 html[lang="en"] .pricing-line:nth-child(5)::after {
     content: 'Individual assessment';
 }
@@ -3620,6 +3622,19 @@ html[lang="en"] .pricing-line:nth-child(5)::after {
     max-width: 66ch;
     color: var(--pastel-text);
 }
+.faq-bullets {
+    display: grid;
+    gap: 10px;
+    padding: 0 40px 24px 22px;
+    max-width: 76ch;
+    color: var(--pastel-text);
+    font-size: .92rem;
+    line-height: 1.65;
+    list-style: disc;
+}
+.faq-bullets li::marker {
+    color: var(--blue-primary);
+}
 
 @media (max-width: 600px) {
     .faq {
@@ -3632,6 +3647,10 @@ html[lang="en"] .pricing-line:nth-child(5)::after {
     .faq-answer p {
         font-size: .85rem;
         padding: 0 20px 18px 4px;
+    }
+    .faq-bullets {
+        font-size: .85rem;
+        padding: 0 20px 18px 20px;
     }
 }
 
