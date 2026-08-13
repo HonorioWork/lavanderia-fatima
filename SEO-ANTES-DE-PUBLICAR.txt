@@ -1,0 +1,9 @@
+Antes de publicar no dominio final:
+
+1. Abra robots.txt e troque https://www.seudominio.com.br pelo dominio real.
+2. Abra sitemap.xml e troque https://www.seudominio.com.br/ pelo dominio real.
+3. Depois que o site estiver online, cadastre o dominio no Google Search Console.
+4. No Search Console, envie o sitemap: https://SEU-DOMINIO/sitemap.xml
+
+O site ja possui titulo, descricao, Open Graph, Twitter Card, robots meta,
+dados estruturados de lavanderia/local business e botao direto para WhatsApp.
