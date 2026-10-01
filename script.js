@@ -20,10 +20,36 @@
         return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + text;
     }
 
+    function updateWhatsAppLinks() {
+        document.querySelectorAll('.js-whatsapp').forEach(function(el) {
+            var localizedMessage = el.getAttribute('data-message-' + currentLang);
+            var message = localizedMessage || el.getAttribute('data-message');
+            el.setAttribute('href', buildWhatsAppLink(message));
+            el.setAttribute('target', '_blank');
+            el.setAttribute('rel', 'noopener noreferrer');
+        });
+    }
+
+    updateWhatsAppLinks();
+
     document.querySelectorAll('.js-whatsapp').forEach(function(el) {
-        el.setAttribute('href', buildWhatsAppLink(el.getAttribute('data-message')));
-        el.setAttribute('target', '_blank');
-        el.setAttribute('rel', 'noopener noreferrer');
+        el.addEventListener('click', function() {
+            var label = el.getAttribute('data-whatsapp-label') || el.getAttribute('aria-label') || 'whatsapp';
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'whatsapp_click',
+                whatsapp_label: label,
+                page_section: el.closest('section') ? el.closest('section').id : 'site'
+            });
+
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'whatsapp_click', {
+                    event_category: 'contato',
+                    event_label: label
+                });
+            }
+        });
     });
 
     // ============================================================
@@ -92,7 +118,7 @@
             price5Value: 'Seda, renda, linho',
             price6Title: 'Tingimento',
             price6Desc: 'Mediante avaliação da peça. Prazo de 15 a 20 dias',
-            pricingCta: 'Solicitar orçamento completo',
+            pricingCta: 'Orçar no WhatsApp',
             processEyebrow: 'Simples assim',
             processTitle: 'Como funciona',
             processLead: 'Da sua confiança à nossa entrega, um processo simples e cuidado.',
@@ -235,7 +261,7 @@
             price5Value: 'Silk, lace, linen',
             price6Title: 'Dyeing',
             price6Desc: 'Subject to garment evaluation. 15 to 20 day deadline',
-            pricingCta: 'Request full quote',
+            pricingCta: 'Quote on WhatsApp',
             processEyebrow: 'Simple as that',
             processTitle: 'How it works',
             processLead: 'From your trust to our delivery, a simple and careful process.',
@@ -351,6 +377,7 @@
         });
 
         document.documentElement.lang = lang;
+        updateWhatsAppLinks();
     }
 
     // ============================================================
