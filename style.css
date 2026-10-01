@@ -4041,3 +4041,142 @@ html[lang="en"] .pricing-line:nth-child(5)::after {
     box-shadow: 0 4px 20px rgba(225,48,108,0.4);
 }
 
+/* ============================================================
+   PRIVACIDADE E CONSENTIMENTO
+   ============================================================ */
+.footer-bottom a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.cookie-banner[hidden] {
+    display: none;
+}
+
+.cookie-banner {
+    position: fixed;
+    z-index: 2000;
+    right: 24px;
+    bottom: 24px;
+    width: min(520px, calc(100% - 48px));
+    padding: 20px;
+    border: 1px solid rgba(43, 122, 158, 0.25);
+    border-radius: 18px;
+    background: #ffffff;
+    color: #163248;
+    box-shadow: 0 18px 50px rgba(13, 42, 60, 0.22);
+}
+
+.cookie-banner__content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cookie-banner p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.cookie-banner a {
+    color: #17688f;
+    font-weight: 700;
+}
+
+.cookie-banner__actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: 8px;
+}
+
+.cookie-button {
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid #2b7a9e;
+    border-radius: 999px;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.cookie-button--primary {
+    background: #2b7a9e;
+    color: #ffffff;
+}
+
+.cookie-button--secondary {
+    background: #ffffff;
+    color: #245d78;
+}
+
+.cookie-button:focus-visible {
+    outline: 3px solid rgba(43, 122, 158, 0.35);
+    outline-offset: 3px;
+}
+
+.legal-page {
+    min-height: 100vh;
+    padding: 48px 20px 72px;
+    background: #f4f8fb;
+    color: #163248;
+}
+
+.legal-card {
+    width: min(820px, 100%);
+    margin: 0 auto;
+    padding: clamp(28px, 5vw, 56px);
+    border: 1px solid rgba(43, 122, 158, 0.18);
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 18px 60px rgba(13, 42, 60, 0.1);
+}
+
+.legal-card h1,
+.legal-card h2 {
+    color: #164b66;
+}
+
+.legal-card h1 {
+    margin: 20px 0 12px;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+}
+
+.legal-card h2 {
+    margin: 30px 0 10px;
+    font-size: 1.25rem;
+}
+
+.legal-card p,
+.legal-card li {
+    line-height: 1.75;
+}
+
+.legal-card a {
+    color: #17688f;
+}
+
+.legal-card .btn {
+    margin-top: 18px;
+}
+
+@media (max-width: 680px) {
+    .cookie-banner {
+        right: 12px;
+        bottom: 12px;
+        width: calc(100% - 24px);
+        padding: 16px;
+    }
+
+    .cookie-banner__content,
+    .cookie-banner__actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .cookie-banner__content {
+        gap: 14px;
+    }
+}
+

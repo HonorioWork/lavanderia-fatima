@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Privacidade e cookies | Lavanderia Fátima</title>
+    <meta name="description" content="Saiba como a Lavanderia Fátima usa dados de navegação e protege sua privacidade.">
+    <link rel="canonical" href="https://lavanderia-fatima-seven.vercel.app/privacidade.html">
+    <link rel="icon" href="assets/images/lavanderia-fatima-logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="legal-page">
+        <article class="legal-card">
+            <a href="index.html">← Voltar ao site</a>
+            <h1>Privacidade e cookies</h1>
+            <p><strong>Última atualização:</strong> 1º de outubro de 2026.</p>
+            <p>A Lavanderia Fátima respeita sua privacidade. Esta página explica quais dados podem ser coletados durante a visita ao site e para que são usados.</p>
+
+            <h2>Dados de navegação</h2>
+            <p>Com sua autorização, usamos o Google Analytics para entender o número de visitas, as páginas acessadas, o tipo de dispositivo e os cliques nos botões do WhatsApp. Não enviamos ao Google o conteúdo das mensagens nem dados informados durante o atendimento.</p>
+
+            <h2>Finalidade</h2>
+            <p>Esses dados ajudam a avaliar quais serviços despertam mais interesse e a melhorar a experiência do site. A medição só é ativada depois que você seleciona “Aceitar” no aviso de privacidade.</p>
+
+            <h2>Cookies e preferência</h2>
+            <p>O navegador guarda sua escolha para evitar que o aviso seja mostrado a cada visita. Se você recusar, o Google Analytics não será carregado.</p>
+
+            <h2>Serviço do Google</h2>
+            <p>O tratamento dos dados de navegação também segue as políticas do Google. Consulte <a href="https://policies.google.com/technologies/partner-sites?hl=pt-BR" target="_blank" rel="noopener noreferrer">como o Google usa informações de sites que utilizam seus serviços</a>.</p>
+
+            <h2>Alterar sua escolha</h2>
+            <p>Você pode apagar a preferência salva neste navegador e escolher novamente.</p>
+            <button class="btn btn-primary" id="resetAnalyticsConsent" type="button">Rever preferência de cookies</button>
+
+            <h2>Contato</h2>
+            <p>Para dúvidas sobre privacidade, fale conosco pelo e-mail <a href="mailto:lavanderiafatimaltda@gmail.com">lavanderiafatimaltda@gmail.com</a> ou pelo telefone (21) 2232-6565.</p>
+        </article>
+    </main>
+
+    <script>
+        document.getElementById('resetAnalyticsConsent').addEventListener('click', function() {
+            try {
+                localStorage.removeItem('lf_analytics_consent');
+            } catch (error) {}
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

@@ -6,8 +6,83 @@
     'use strict';
 
     var WHATSAPP_NUMBER = '552122326565';
+    var GA_MEASUREMENT_ID = 'G-BLH38H8S4E';
+    var ANALYTICS_CONSENT_KEY = 'lf_analytics_consent';
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var currentLang = 'pt';
+
+    // ============================================================
+    // 0. ANALYTICS E CONSENTIMENTO
+    // ============================================================
+    function getAnalyticsConsent() {
+        try {
+            return window.localStorage.getItem(ANALYTICS_CONSENT_KEY);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    function saveAnalyticsConsent(value) {
+        try {
+            window.localStorage.setItem(ANALYTICS_CONSENT_KEY, value);
+        } catch (error) {
+            // O consentimento vale apenas para esta visita se o navegador bloquear o armazenamento.
+        }
+    }
+
+    function loadAnalytics() {
+        if (getAnalyticsConsent() !== 'granted' || document.querySelector('script[data-google-analytics]')) {
+            return;
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function() {
+            window.dataLayer.push(arguments);
+        };
+
+        window.gtag('js', new Date());
+        window.gtag('config', GA_MEASUREMENT_ID, {
+            anonymize_ip: true
+        });
+
+        var analyticsScript = document.createElement('script');
+        analyticsScript.async = true;
+        analyticsScript.dataset.googleAnalytics = 'true';
+        analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
+        document.head.appendChild(analyticsScript);
+    }
+
+    function setAnalyticsConsent(value) {
+        saveAnalyticsConsent(value);
+        var banner = document.getElementById('cookieBanner');
+        if (banner) {
+            banner.hidden = true;
+        }
+        if (value === 'granted') {
+            loadAnalytics();
+        }
+    }
+
+    var cookieBanner = document.getElementById('cookieBanner');
+    var analyticsConsent = getAnalyticsConsent();
+    if (cookieBanner && !analyticsConsent) {
+        cookieBanner.hidden = false;
+    }
+
+    var acceptAnalytics = document.getElementById('acceptAnalytics');
+    var declineAnalytics = document.getElementById('declineAnalytics');
+    if (acceptAnalytics) {
+        acceptAnalytics.addEventListener('click', function() {
+            setAnalyticsConsent('granted');
+        });
+    }
+    if (declineAnalytics) {
+        declineAnalytics.addEventListener('click', function() {
+            setAnalyticsConsent('denied');
+        });
+    }
+
+    loadAnalytics();
 
     // ============================================================
     // 1. WHATSAPP
@@ -35,18 +110,14 @@
     document.querySelectorAll('.js-whatsapp').forEach(function(el) {
         el.addEventListener('click', function() {
             var label = el.getAttribute('data-whatsapp-label') || el.getAttribute('aria-label') || 'whatsapp';
-
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                event: 'whatsapp_click',
-                whatsapp_label: label,
-                page_section: el.closest('section') ? el.closest('section').id : 'site'
-            });
+            var section = el.closest('section') ? el.closest('section').id : 'site';
 
             if (typeof window.gtag === 'function') {
                 window.gtag('event', 'whatsapp_click', {
                     event_category: 'contato',
-                    event_label: label
+                    event_label: label,
+                    whatsapp_label: label,
+                    page_section: section
                 });
             }
         });
