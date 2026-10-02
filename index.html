@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Lavanderia Fátima | Lavagem e passadoria no Centro do Rio</title>
-    <meta name="description" content="Lavanderia Fátima no Centro do Rio. Lavagem a seco, roupas, tênis, tapetes, cortinas, persianas e passadoria com orçamento pelo WhatsApp.">
+    <meta name="description" content="Lavanderia Fátima no Centro do Rio. Lavagem a seco, roupas, tênis, tapetes, cortinas, persianas, passadoria, coleta e entrega.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="author" content="Lavanderia Fátima">
     <meta name="geo.region" content="BR-RJ">
@@ -48,7 +48,7 @@
         "@context": "https://schema.org",
         "@type": "DryCleaningOrLaundry",
         "name": "Lavanderia Fátima",
-        "description": "Lavanderia no Centro do Rio de Janeiro com lavagem a seco, roupas, tênis, tapetes, cortinas, persianas, edredons e passadoria.",
+        "description": "Lavanderia no Centro do Rio de Janeiro com lavagem a seco, roupas, tênis, tapetes, cortinas, persianas, edredons, passadoria, coleta e entrega.",
         "telephone": "+55 21 2232-6565",
         "email": "lavanderiafatimaltda@gmail.com",
         "priceRange": "$$",
@@ -242,6 +242,12 @@
             <symbol id="icon-curtain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 3h16M6 3v18M18 3v18M12 3v18"/>
                 <path d="M6 7c2 1 4 1 6 0M12 7c2 1 4 1 6 0M6 17c2-1 4-1 6 0M12 17c2-1 4-1 6 0"/>
+            </symbol>
+            <symbol id="icon-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 17h4V5H2v12h3"/>
+                <path d="M14 9h4l4 4v4h-3"/>
+                <circle cx="7.5" cy="17.5" r="2.5"/>
+                <circle cx="16.5" cy="17.5" r="2.5"/>
             </symbol>
             <symbol id="icon-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
@@ -492,6 +498,30 @@
         </section>
 
         <!-- ============================================================
+             SERVIÇO DE COLETA E ENTREGA
+             ============================================================ -->
+        <section class="pickup-delivery" id="coleta-entrega" aria-label="Serviço de Coleta e Entrega">
+            <div class="container">
+                <article class="pickup-delivery-card" data-reveal="slide-up">
+                    <span class="pickup-delivery-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><use href="#icon-truck"/></svg>
+                    </span>
+                    <div class="pickup-delivery-copy">
+                        <p class="pickup-delivery-eyebrow" data-translate="pickupEyebrow">Mais praticidade</p>
+                        <h2 data-translate="pickupTitle">Serviço de Coleta e Entrega</h2>
+                        <p data-translate="pickupIntro">Caso não consiga levar suas peças até a lavanderia, conte com o nosso serviço de Coleta e Entrega.</p>
+                        <p data-translate="pickupRate">Entre em contato conosco e informe o seu endereço completo. A taxa é calculada de acordo com a localização.</p>
+                        <p class="pickup-delivery-prompt" data-translate="pickupPrompt">Envie seu endereço para consultarmos a taxa de Coleta e Entrega.</p>
+                    </div>
+                    <a href="https://wa.me/552122326565" class="btn btn-primary btn-whatsapp js-whatsapp pickup-delivery-cta" data-message-pt="Olá! Gostaria de consultar a taxa do serviço de Coleta e Entrega. Meu endereço completo é: " data-message-en="Hello! I would like to check the pickup and delivery fee. My full address is: " data-whatsapp-label="consulta_taxa_coleta_entrega" aria-label="Consultar taxa de Coleta e Entrega pelo WhatsApp">
+                        <img class="icon-img icon-img--light" src="assets/icons/whatsapp.svg" alt="" aria-hidden="true">
+                        <span data-translate="pickupCta">Consultar taxa no WhatsApp</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============================================================
              SEÇÃO PREÇOS - CARDS
              ============================================================ -->
         <section class="pricing" id="precos" aria-label="Tabela de preços">
@@ -538,8 +568,8 @@
                             </svg>
                             <span class="process-number">01</span>
                         </div>
-                        <h3 data-translate="process1Title">Leve suas roupas até nossa loja</h3>
-                        <p data-translate="process1Desc">Traga suas peças até nosso endereço no Centro do Rio.</p>
+                        <h3 data-translate="process1Title">Leve suas roupas ou solicite a coleta</h3>
+                        <p data-translate="process1Desc">Traga suas peças até a loja ou envie seu endereço para consultarmos a taxa de coleta.</p>
                     </div>
                     <div class="process-step" data-reveal="slide-up" style="--i:1">
                         <div class="process-node">
@@ -568,8 +598,8 @@
                             </svg>
                             <span class="process-number">04</span>
                         </div>
-                        <h3 data-translate="process4Title">Retire limpo e pronto</h3>
-                        <p data-translate="process4Desc">Suas roupas impecáveis, passadas e dobradas, esperando por você.</p>
+                        <h3 data-translate="process4Title">Receba ou retire limpo e pronto</h3>
+                        <p data-translate="process4Desc">Suas roupas impecáveis, passadas e dobradas, prontas para retirada ou entrega.</p>
                     </div>
                 </div>
             </div>
