@@ -495,6 +495,9 @@ section[id] { scroll-margin-top: 84px; }
     height: 14px;
     background: var(--pastel-gray);
 }
+.language-switch--mobile {
+    display: none;
+}
 
 /* AÇÕES DO CABEÇALHO */
 .header-actions {
@@ -575,6 +578,19 @@ section[id] { scroll-margin-top: 84px; }
     .nav-links a:hover {
         color: var(--blue-primary);
     }
+    .nav-links .language-switch--mobile {
+        display: flex;
+        margin-top: 18px;
+        align-self: flex-start;
+        background: var(--pastel-blue-100);
+        border-color: var(--pastel-blue-200);
+    }
+    .nav-links .language-switch--mobile .lang-btn {
+        color: var(--pastel-text);
+    }
+    .nav-links .language-switch--mobile .lang-btn.active {
+        color: #fff;
+    }
     .nav-toggle { display: flex; }
     .nav-scrim {
         position: fixed;
@@ -607,6 +623,9 @@ section[id] { scroll-margin-top: 84px; }
     }
     .language-switch {
         display: none;
+    }
+    .nav-links .language-switch--mobile {
+        display: flex;
     }
     .site-header {
         padding: 12px 0;
